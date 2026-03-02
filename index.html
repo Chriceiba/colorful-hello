@@ -1,1 +1,41 @@
-
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Colorful Hello World</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1 id="greeting">Hello World </h1>
+        <button id="colorButton">Change Color</button>
+        <p class="note">
+            Made with GitHub Codespaces & Git
+         </p>
+        <script>
+            // Function that generates a random color
+            function getRandomColor() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            return `rgb(${r}, ${g}, ${b})`;
+            }
+            // Change the background color when the button is clicked
+            const button = document.getElementById("colorButton");
+            const greeting = document.getElementById("greeting");
+            button.addEventListener("click", () => {
+            const newColor = getRandomColor();
+            document.body.style.backgroundColor = newColor;
+            // Optional: Change the greeting text as well
+            const messages = [
+            "Hello World ",
+            "Hello World ",
+            "Hola Mundo ",
+            "Bonjour le monde ",
+            "Hello Universe "
+            ];
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            greeting.textContent = messages[randomIndex];
+            });
+        </script>
+    </body>
+</html>
